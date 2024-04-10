@@ -1,0 +1,22 @@
+.slider_image_1{
+    background:  url('../../assets/slider_1.png'),lightgray 0px 0px / 100% 100% no-repeat;
+    /* background-color: red; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}
+.slider_image2{
+    background:  url('../../assets/slider_1.png'),lightgray 0px 0px / 100% 100% no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}
+.slider_image_3{
+    background:  url('../../assets/slider_1.png'),lightgray 0px 0px / 100% 100% no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}

@@ -27,8 +27,8 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="shadow-md w-full fixed top-0 left-0">
-        <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+      <div className=" mx-auto w-[90%] top-0 left-0">
+        <div className="md:flex items-center justify-between bg-white py-4">
           {/* logo section */}
           <div className="font-bold cursor-pointer flex items-center gap-1">
             <h1>
@@ -38,7 +38,7 @@ const Navbar = () => {
           {/* Menu icon */}
           <div
             onClick={() => setOpen(!open)}
-            className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 "
+            className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 z-2"
           >
             {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
           </div>
