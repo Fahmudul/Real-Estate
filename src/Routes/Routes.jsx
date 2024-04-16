@@ -8,6 +8,7 @@ import UserProfile from "../Pages/Home/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import DetailsPage from "../Pages/Shared/Navbar/DetailsPage";
 import ErrorElements from "../error-element/error-element";
+import Cart from "../Pages/Home/Cart";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,16 +30,24 @@ export const router = createBrowserRouter([
       {
         path: "/updateprofile",
         element: (
-          <PrivateRoute>
+          
             <UpdateProfile></UpdateProfile>
-          </PrivateRoute>
+          
         ),
       },
       {
         path: "/userprofile",
         element: (
-          <PrivateRoute>
+          
             <UserProfile></UserProfile>
+          
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
           </PrivateRoute>
         ),
       },

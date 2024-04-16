@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
+import Footer from "./Footer";
 
 const UpdateProfile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -17,10 +19,14 @@ const UpdateProfile = () => {
   return (
     <div className="">
       <Navbar></Navbar>
-      <div className="w-full md:h-[60vh] lg:h-[70vh] items-center flex justify-center ">
-        <div className="shadow-xl  w-[600px] h-[300px] mx-auto rounded-lg flex flex-col md:flex-row lg:flex-row justify-center gap-7 items-center">
-          <div></div>
-          <img src={user?.photoURL} className="h-[70%] rounded-xl" alt="" />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Update Profile | HomeHeaven</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div className="w-full h-[600px] items-center flex justify-center border">
+        <div className="shadow-xl   w-[600px] h-[500px] mx-auto rounded-lg flex flex-col md:flex-row lg:flex-row justify-center gap-7 items-center">
+          <img src={user?.photoURL} className="h-[50%] lg:h-[70%] rounded-xl" alt="" />
           <div>
             <form onSubmit={updateProfile}>
               <input
@@ -42,6 +48,8 @@ const UpdateProfile = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
+
     </div>
   );
 };

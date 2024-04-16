@@ -14,7 +14,6 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [estate, setEstate] = useState(null);
   const provider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
   const signUp = (email, password) => {
@@ -29,21 +28,16 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-console.log(user)
   const updateUserProfile = (name, photoURL) => {
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoURL,
     })
       .then(() => {
-        // Profile updated!
         alert("updated successfully");
-        // ...
       })
       .catch((error) => {
-        // An error occurred
         console.error(error);
-        // ...
       });
   };
 
@@ -59,23 +53,16 @@ console.log(user)
         console.error(error);
       });
   };
-  // useEffect(() => {
-  //   fetch(
-  //     "https://raw.githubusercontent.com/Fahmudul/estate-info/main/privateislands.json"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => setEstate(data));
-  // }, []);
-  // console.log(estate);
+ 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentuser) => {
       if (currentuser) {
-        // console.log("changed", currentuser);
         setUser(currentuser);
-        // ...
+        setLoading(false)
       } else {
         setUser(null);
-        // alert("")
+        setLoading(false)
+        
       }
     });
     return () => {
@@ -91,7 +78,7 @@ console.log(user)
     GitHubSignIn,
     setUser,
     updateUserProfile,
-    
+    loading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

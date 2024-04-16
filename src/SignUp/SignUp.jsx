@@ -4,6 +4,8 @@ import Navbar from "../Pages/Shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet";
+import Footer from "../Pages/Home/Footer";
 const SignUp = () => {
   const { signUp, GoogleSignIn, GitHubSignIn, setUser } =
     useContext(AuthContext);
@@ -75,6 +77,11 @@ const SignUp = () => {
   return (
     <div>
       <Navbar photoUrl={photoUrl}></Navbar>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Register | HomeHeaven</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleSignUp}>
@@ -180,6 +187,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

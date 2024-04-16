@@ -2,6 +2,8 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
+import Footer from "./Footer";
 
 const SignIn = () => {
   const { logIn } = useContext(AuthContext);
@@ -29,7 +31,11 @@ const SignIn = () => {
   return (
     <div>
       <Navbar></Navbar>
-
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login | HomeHeaven</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-black text-center">Please Login</h1>
@@ -76,6 +82,8 @@ const SignIn = () => {
           </form>
         </div>
       </div>
+      <Footer></Footer>
+
     </div>
   );
 };

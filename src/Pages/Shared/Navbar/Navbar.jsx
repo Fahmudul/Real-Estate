@@ -12,14 +12,31 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink
+              className="mr-4  px-5 py-3 text-lg rounded-lg"
+              to="/updateProfile"
+            >
+              Update Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="mr-4  px-5 py-3 text-lg rounded-lg"
+              to="/userProfile"
+            >
+              User Profile
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        <></>
+      )}
       <li>
-        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/updateProfile">
-          Update Profile
-        </NavLink>
-      </li>
-      <li>
-        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/userProfile">
-          User Profile
+        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/cart">
+          Cart
         </NavLink>
       </li>
     </>

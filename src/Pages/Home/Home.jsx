@@ -11,8 +11,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Resort from "../../Resort/Resort";
+import { Helmet } from "react-helmet";
+import { FaFacebook, FaPinterest } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { SiDiscord } from "react-icons/si";
 import PropTypes from "prop-types";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Footer from "./Footer";
 // import img_1 from "../../assets/slider 1.png";
 const Home = () => {
   useEffect(() => {
@@ -22,6 +27,11 @@ const Home = () => {
   return (
     <div>
       <Navbar></Navbar>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | HomeHeaven</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       {/*Banner section*/}
       <div className="w-[90%] mt-5 mx-auto ">
         <Swiper
@@ -95,6 +105,7 @@ const Home = () => {
         Estate
       </h1>
       <Resort></Resort>
+      <Footer></Footer>
     </div>
   );
 };
