@@ -1,10 +1,11 @@
 import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Navigate, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 
 const SignIn = () => {
   const { logIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -15,11 +16,14 @@ const SignIn = () => {
     logIn(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        alert("Logged in Successfully");
+        setTimeout(function () {
+          window.location.href = "/";
+        }, 2000);
         // <Navigate to="/" />;
       })
       .catch((error) => {
-        console.error(error);
+        setError(error);
       });
   };
   return (
@@ -62,6 +66,13 @@ const SignIn = () => {
             <div className="form-control mt-6">
               <button className="btn bg-blue-500 ">Login</button>
             </div>
+            <p className="mt-7 text-center">
+              Dont Have an account{" "}
+              <Link className="underline  text-blue-800" to="/signup">
+                Sign Up
+              </Link>
+            </p>
+            <p>{error ? error.message : ""}</p>
           </form>
         </div>
       </div>

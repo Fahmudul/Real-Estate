@@ -1,0 +1,33 @@
+ul li a.active{
+    border-width: 2px;
+    border-color: #138cbcca;
+    color: #138cbcca;
+    font-size: 1.125rem; 
+    border-radius: 0.5rem;
+    list-style-type: none;
+
+}
+
+@media screen and (max-width:600px){
+        ul li a.active{
+        border:2px solid #138cbcca;
+        padding: 3px 5px;
+        color: #138cbcca;
+        width: 100%;
+        text-decoration: none;
+
+    }
+}
+
+ul li a{
+    color:black;
+    background: transparent;
+    text-decoration: none;
+    font-size: 1.125rem; 
+}
+
+ul li {
+    background: transparent;
+
+    list-style-type: none;
+}

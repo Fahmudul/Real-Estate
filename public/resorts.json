@@ -1,0 +1,80 @@
+[
+    {
+        "image": "resort1.jpg",
+        "estate_title": "Tropical Paradise Retreat",
+        "id": "RES001",
+        "segment_name": "Luxury Resorts",
+        "description": "Escape to a secluded paradise with lush gardens, private villas, and breathtaking ocean views. Indulge in luxury amenities and serene surroundings.",
+        "price": "$1000 per night",
+        "status": "rent",
+        "area": "3000 sq ft",
+        "location": "Bali, Indonesia",
+        "facilities": ["private villas", "infinity pool", "beachfront dining"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "resort2.jpg",
+        "estate_title": "Island Oasis Resort",
+        "id": "RES002",
+        "segment_name": "Luxury Resorts",
+        "description": "Discover an island oasis with luxurious bungalows, pristine beaches, and panoramic ocean vistas. Experience unparalleled relaxation and indulgence.",
+        "price": "$1500 per night",
+        "status": "rent",
+        "area": "2500 sq ft",
+        "location": "Maldives",
+        "facilities": ["overwater bungalows", "private beach", "spa"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "resort3.jpg",
+        "estate_title": "Mountain Retreat Resort",
+        "id": "RES003",
+        "segment_name": "Luxury Resorts",
+        "description": "Escape to a mountain retreat with luxury chalets, panoramic mountain views, and pristine nature trails. Experience serenity and adventure in equal measure.",
+        "price": "$1200 per night",
+        "status": "rent",
+        "area": "2000 sq ft",
+        "location": "Swiss Alps",
+        "facilities": ["luxury chalets", "mountain spa", "hiking trails"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "resort4.jpg",
+        "estate_title": "Desert Oasis Resort",
+        "id": "RES004",
+        "segment_name": "Luxury Resorts",
+        "description": "Immerse yourself in the luxury of a desert oasis, with elegant tents, starlit skies, and tranquil desert landscapes. Experience luxury amidst the dunes.",
+        "price": "$800 per night",
+        "status": "rent",
+        "area": "1800 sq ft",
+        "location": "Dubai, UAE",
+        "facilities": ["luxury tents", "desert dining", "camel rides"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "resort5.jpg",
+        "estate_title": "Coastal Haven Resort",
+        "id": "RES005",
+        "segment_name": "Luxury Resorts",
+        "description": "Relax in coastal luxury with elegant suites, oceanfront views, and pristine sandy beaches. Experience the ultimate coastal retreat with unparalleled comfort.",
+        "price": "$2000 per night",
+        "status": "rent",
+        "area": "3500 sq ft",
+        "location": "Maui, Hawaii",
+        "facilities": ["oceanfront suites", "private beach access", "spa"],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "resort6.jpg",
+        "estate_title": "Jungle Hideaway Resort",
+        "id": "RES006",
+        "segment_name": "Luxury Resorts",
+        "description": "Immerse yourself in the beauty of the jungle with luxurious treehouses, wildlife encounters, and serene jungle trails. Experience nature in ultimate comfort.",
+        "price": "$1800 per night",
+        "status": "rent",
+        "area": "2200 sq ft",
+        "location": "Amazon Rainforest",
+        "facilities": ["luxury treehouses", "jungle spa", "wildlife tours"],
+        "view_property_button": "View Property"
+    }
+]

@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         monospace: "'Work Sans', sans-serif",
       },
+      screens:{
+        'lg':'1030px'
+      }
     },
   },
   plugins: [require("daisyui")],
