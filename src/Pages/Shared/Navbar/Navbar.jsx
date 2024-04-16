@@ -12,28 +12,22 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      {user ? (
-        <>
-          <li>
-            <NavLink
-              className="mr-4  px-5 py-3 text-lg rounded-lg"
-              to="/updateProfile"
-            >
-              Update Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="mr-4  px-5 py-3 text-lg rounded-lg"
-              to="/userProfile"
-            >
-              User Profile
-            </NavLink>
-          </li>
-        </>
-      ) : (
-        <></>
-      )}
+      <li>
+        <NavLink
+          className="mr-4  px-5 py-3 text-lg rounded-lg"
+          to="/updateProfile"
+        >
+          Update Profile
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="mr-4  px-5 py-3 text-lg rounded-lg"
+          to="/userProfile"
+        >
+          User Profile
+        </NavLink>
+      </li>
       <li>
         <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/cart">
           Cart
@@ -54,7 +48,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5">
+    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5 bg-transparent">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -94,8 +88,12 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex gap-2 lg:space-x-5 items-center">
-            <img className="h-10 w-10 rounded-full" src={user.photoURL} />
-            <button onClick={handleSignOut} className="btn btn-primary">
+            <img
+              className="h-10 w-10 rounded-full"
+              title={user.displayName}
+              src={user.photoURL}
+            />
+            <button onClick={handleSignOut} className="btn btn-ghost">
               Log Out
             </button>
           </div>

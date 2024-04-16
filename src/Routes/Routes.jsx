@@ -30,17 +30,17 @@ export const router = createBrowserRouter([
       {
         path: "/updateprofile",
         element: (
-          
+          <PrivateRoute>
             <UpdateProfile></UpdateProfile>
-          
+          </PrivateRoute>
         ),
       },
       {
         path: "/userprofile",
         element: (
-          
+          <PrivateRoute>
             <UserProfile></UserProfile>
-          
+          </PrivateRoute>
         ),
       },
       {
@@ -53,7 +53,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/details/:detailId",
-        element: <DetailsPage></DetailsPage>,
+        element: (
+          <PrivateRoute>
+            <DetailsPage></DetailsPage>
+          </PrivateRoute>
+        ),
       },
     ],
   },

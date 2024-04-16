@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import Footer from "../Pages/Home/Footer";
+import Footer from "../Pages/Shared/Navbar/Footer";
+import toast from "react-hot-toast";
+import "../Pages/Home/linearBackground.css";
+import { FaLock, FaUser } from "react-icons/fa";
+import { MdInsertPhoto, MdEmail } from "react-icons/md";
+
 const SignUp = () => {
   const { signUp, GoogleSignIn, GitHubSignIn, setUser } =
     useContext(AuthContext);
@@ -25,12 +30,15 @@ const SignUp = () => {
     setPhotoUrl(photo);
     if (password.length < 6) {
       setError("Password need to be at-least 6 characters");
+      return;
     }
     if (!/[A-Z]/.test(password)) {
       setError("Password must need to contain an Uppercase letter ");
+      return;
     }
     if (!/^(?=.*[a-z]).+$/.test(password)) {
       setError("Password must need to contain an LowerCase letter ");
+      return;
     }
     signUp(email, password)
       .then((result) => {
@@ -38,7 +46,7 @@ const SignUp = () => {
           photoURL: photo,
           displayName: name,
         });
-        alert("Successfully created your account");
+        toast.success("Successfully created your account");
         setTimeout(function () {
           // console.log("redirect");
           location.reload();
@@ -82,12 +90,18 @@ const SignUp = () => {
         <title>Register | HomeHeaven</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="hero min-h-screen bg-custom-background">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl ">
+          <h1 className="text-black text-center text-xl font-bold mt-4">
+            Create your Account!
+          </h1>
+
           <form className="card-body" onSubmit={handleSignUp}>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
+            <div className="form-control relative">
+              <FaUser className="w-5 h-5 absolute  top-2 " />
+
+              <label className="label ml-5">
+                <span className="label-text text-base font-bold">Name</span>
               </label>
               <input
                 type="name"
@@ -97,9 +111,13 @@ const SignUp = () => {
                 required
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Photo Url</span>
+            <div className="form-control relative">
+              <MdInsertPhoto className="w-5 h-5 absolute top-2" />
+
+              <label className="label ml-5">
+                <span className="label-text text-base font-bold">
+                  Photo Url
+                </span>
               </label>
               <input
                 type="text"
@@ -109,10 +127,14 @@ const SignUp = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
+              <MdEmail className="w-5 h-5 absolute  top-[9px]" />
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-base font-bold ml-5">
+                  Email
+                </span>
               </label>
+
               <input
                 type="email"
                 name="email"
@@ -121,9 +143,11 @@ const SignUp = () => {
                 required
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
+            <div className="form-control relative">
+              <FaLock className="w-5 h-5 absolute  top-2 " />
+
+              <label className="label ml-5">
+                <span className="label-text text-base font-bold">Password</span>
               </label>
               <input
                 type="password"
@@ -134,7 +158,9 @@ const SignUp = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-blue-500 ">Sign Up</button>
+              <button className="btn bg-blue-500 border-none text-white">
+                Sign Up
+              </button>
             </div>
 
             <p className="mt-7 text-center">

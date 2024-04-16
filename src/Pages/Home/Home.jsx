@@ -16,8 +16,9 @@ import { FaFacebook, FaPinterest } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { SiDiscord } from "react-icons/si";
 import PropTypes from "prop-types";
-import { Link, useLoaderData } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "../Shared/Navbar/Footer";
+import "./linearBackground.css";
+
 // import img_1 from "../../assets/slider 1.png";
 const Home = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <Navbar></Navbar>
       <Helmet>
         <meta charSet="utf-8" />

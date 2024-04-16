@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import { object } from "prop-types";
+import Footer from "./Footer";
+import { saveProperty } from "../../../SaveToLocalStorage/SaveToLocalStorage";
 
 const DetailsPage = () => {
   const [estates, setEstate] = useState([]);
@@ -23,18 +25,24 @@ const DetailsPage = () => {
     status,
     area,
     location,
-    facilities,
-    image
+    image,
   } = singleState;
-  // console.log(estate_title);
-  console.log(facilities);
-  //   console.log(Object.values(singleState));
+  const { facilities } = singleState;
+  // console.log(facilities);
+  const handleBuyProperty = (propertyName) => {
+    saveProperty(propertyName);
+    // console.log(propertyName);
+  };
   return (
     <div>
       <Navbar></Navbar>
       <div className="w-[90%] mx-auto  flex flex-col  lg:gap-12 gap-5">
         <div className="w-full lg:h-[550px]  py-7 bg-white rounded-2xl">
-          <img src={image} className="w-full h-[100%] mx-auto rounded-2xl" alt="" />
+          <img
+            src={image}
+            className="w-full h-[100%] mx-auto rounded-2xl"
+            alt=""
+          />
         </div>
         <div className="w-full lg:w-[48%]">
           <h1 className="font-bold text-4xl">{estate_title}</h1>
@@ -45,7 +53,7 @@ const DetailsPage = () => {
 
           <div className="w-full mb-8 flex flex-col gap-3">
             <div className="flex">
-              <p className="w-[30%]">Lcation</p>
+              <p className="w-[30%]">Location</p>
               <span className="font-semibold">{location}</span>
             </div>
             <div className="flex">
@@ -58,13 +66,28 @@ const DetailsPage = () => {
                 {status}
               </span>
             </div>
+            <div className="flex ">
+              <p className="font-bold  w-[30%]">Facility:</p>
+              {facilities?.map((facility, idx) => (
+                <p className="font-bold text-[#6b7290] mr-2" key={idx}>
+                  {facility},
+                </p>
+              ))}
+            </div>
             <div className="flex">
               <p className="w-[30%] ">Price</p>
               <span className="font-semibold text-green-600">{price}</span>
             </div>
+            <button
+              className="btn btn-success"
+              onClick={() => handleBuyProperty(singleState)}
+            >
+              Buy Property
+            </button>
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

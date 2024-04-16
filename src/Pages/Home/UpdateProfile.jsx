@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet";
-import Footer from "./Footer";
+import Footer from "../Shared/Navbar/Footer";
 
 const UpdateProfile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -24,9 +24,13 @@ const UpdateProfile = () => {
         <title>Update Profile | HomeHeaven</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className="w-full h-[600px] items-center flex justify-center border">
+      <div className="w-full h-[600px] items-center flex justify-center ">
         <div className="shadow-xl   w-[600px] h-[500px] mx-auto rounded-lg flex flex-col md:flex-row lg:flex-row justify-center gap-7 items-center">
-          <img src={user?.photoURL} className="h-[50%] lg:h-[70%] rounded-xl" alt="" />
+          <img
+            src={user?.photoURL}
+            className="h-[50%] lg:h-[70%] rounded-xl"
+            alt=""
+          />
           <div>
             <form onSubmit={updateProfile}>
               <input
@@ -49,7 +53,6 @@ const UpdateProfile = () => {
         </div>
       </div>
       <Footer></Footer>
-
     </div>
   );
 };

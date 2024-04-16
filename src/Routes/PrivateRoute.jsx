@@ -3,7 +3,6 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  console.log(loading);
   if (loading) {
     return (
       <div className="relative h-screen flex justify-center items-center">
@@ -16,7 +15,7 @@ const PrivateRoute = ({ children }) => {
   }
 
   if (!user) {
-    return (window.location.href = "/");
+    return (window.location.href = "/signin");
   }
 };
 
