@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5 bg-transparent animate__animated animate__backInLeft">
+    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5 bg-transparent animate__animated animate__bounceInRight">
       <div className="navbar-start">
         <div className="dropdown">
           <div

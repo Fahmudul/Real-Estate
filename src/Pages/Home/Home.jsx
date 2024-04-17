@@ -35,7 +35,7 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       {/*Banner section*/}
-      <div className="w-[90%] mt-5 mx-auto bg-transparent animate__animated animate__backInLeft">
+      <div className="w-[90%] mt-5 mx-auto bg-transparent ">
         <Swiper
           className=" h-[900px]"
           // install Swiper modules
@@ -50,8 +50,8 @@ const Home = () => {
         >
           <SwiperSlide>
             <div className=" rounded-2xl min-h-[800px] slider_image_1  text-center">
-              <div className=" text-white  py-[20%] px-[5%] text-center flex flex-col justify-center items-center">
-                <h1 className="text-3xl md:text-5xl lg:text-5xl  text-center">
+              <div className=" text-white  py-[20%] px-[5%] text-center flex flex-col justify-center items-center animate__animated animate__backInLeft">
+                <h1 className="text-3xl md:text-5xl lg:text-5xl  text-center ">
                   Your Private Island Getaway
                 </h1>
                 <p className="lg:w-[60%] text-lg mt-3 mb-4 text-center">

@@ -66,18 +66,30 @@ const SignUp = () => {
     GoogleSignIn()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully created your account");
+        setTimeout(function () {
+          // console.log("redirect");
+          location.reload();
+          window.location.href = "/";
+        }, 2000);
       })
       .catch((error) => {
-        console.error(error);
+        toast.error(error);
       });
   };
   const handleGitHubSignIn = () => {
     GitHubSignIn()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully created your account");
+        setTimeout(function () {
+          // console.log("redirect");
+          location.reload();
+          window.location.href = "/";
+        }, 2000);
       })
       .catch((error) => {
-        console.error(error);
+        toast.error(error);
       });
   };
 
