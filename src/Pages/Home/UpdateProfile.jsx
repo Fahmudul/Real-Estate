@@ -14,7 +14,6 @@ const UpdateProfile = () => {
     // console.log(name, photo);
     updateUserProfile(name, photo);
     console.log(user);
-    // navigate("/")
   };
   return (
     <div className="">

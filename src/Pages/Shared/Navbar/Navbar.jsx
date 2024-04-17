@@ -2,19 +2,20 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import "./Navbar.css";
+import toast from "react-hot-toast";
 const Navbar = () => {
   // console.log(photoUrl);
   const { user, logOut } = useContext(AuthContext);
   const navNavLinks = (
     <>
       <li>
-        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/">
+        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg " to="/">
           Home
         </NavLink>
       </li>
       <li>
         <NavLink
-          className="mr-4  px-5 py-3 text-lg rounded-lg"
+          className="mr-4  px-5 py-3 text-lg rounded-lg "
           to="/updateProfile"
         >
           Update Profile
@@ -22,14 +23,14 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          className="mr-4  px-5 py-3 text-lg rounded-lg"
+          className="mr-4  px-5 py-3 text-lg rounded-lg "
           to="/userProfile"
         >
           User Profile
         </NavLink>
       </li>
       <li>
-        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg" to="/cart">
+        <NavLink className="mr-4  px-5 py-3 text-lg rounded-lg " to="/cart">
           Cart
         </NavLink>
       </li>
@@ -39,7 +40,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     logOut()
       .then((result) => {
-        // console.log(result);
+        // toast.success("Log out successfully!");
       })
       .catch((error) => {
         console.error(error);
@@ -100,7 +101,7 @@ const Navbar = () => {
         ) : (
           <div>
             <button className="btn ">
-              <Link className="no-underline text-black" to="/signin">
+              <Link className="no-underline text-black text-lg" to="/signin">
                 Login
               </Link>
             </button>

@@ -2,7 +2,7 @@
 
 ### Live site URL
 
--
+-https://haven-homes-f4687.web.app/
 
 ### Overview: <br />
 
@@ -23,8 +23,6 @@ Users can log in using email and password or through social media platforms like
 
 #Slider Banner:
 The website features an engaging slider banner with a minimum of three slides to showcase properties or promotions.
-
-
 
 ### Estate Details: <br />
 

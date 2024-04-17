@@ -8,6 +8,8 @@ import {
   GithubAuthProvider,
   updateProfile,
 } from "firebase/auth";
+import toast from "react-hot-toast";
+
 import auth from "../Firebase/firebase.init";
 import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext(null);
@@ -34,7 +36,10 @@ const AuthProvider = ({ children }) => {
       photoURL: photoURL,
     })
       .then(() => {
-        alert("updated successfully");
+        toast.success("updated successfully");
+        setTimeout(() => {
+          location.reload();
+        }, 1500);
       })
       .catch((error) => {
         console.error(error);
@@ -53,16 +58,15 @@ const AuthProvider = ({ children }) => {
         console.error(error);
       });
   };
- 
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentuser) => {
       if (currentuser) {
         setUser(currentuser);
-        setLoading(false)
+        setLoading(false);
       } else {
         setUser(null);
-        setLoading(false)
-        
+        setLoading(false);
       }
     });
     return () => {
@@ -78,7 +82,7 @@ const AuthProvider = ({ children }) => {
     GitHubSignIn,
     setUser,
     updateUserProfile,
-    loading
+    loading,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
