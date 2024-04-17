@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import "./Navbar.css";
 import toast from "react-hot-toast";
+import "animate.css";
+
 const Navbar = () => {
   // console.log(photoUrl);
   const { user, logOut } = useContext(AuthContext);
@@ -49,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5 bg-transparent">
+    <div className="navbar bg-base-100 w-[90%] mx-auto mt-5 bg-transparent animate__animated animate__backInLeft">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -94,7 +96,7 @@ const Navbar = () => {
               title={user.displayName}
               src={user.photoURL}
             />
-            <button onClick={handleSignOut} className="btn btn-ghost">
+            <button onClick={handleSignOut} className="btn btn-ghost text-lg">
               Log Out
             </button>
           </div>

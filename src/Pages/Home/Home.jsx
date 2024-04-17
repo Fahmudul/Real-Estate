@@ -18,7 +18,7 @@ import { SiDiscord } from "react-icons/si";
 import PropTypes from "prop-types";
 import Footer from "../Shared/Navbar/Footer";
 import "./linearBackground.css";
-import 'animate.css';
+import "animate.css";
 
 // import img_1 from "../../assets/slider 1.png";
 const Home = () => {
@@ -35,7 +35,7 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       {/*Banner section*/}
-      <div className="w-[90%] mt-5 mx-auto ">
+      <div className="w-[90%] mt-5 mx-auto bg-transparent animate__animated animate__backInLeft">
         <Swiper
           className=" h-[900px]"
           // install Swiper modules
@@ -49,12 +49,12 @@ const Home = () => {
           onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <div className=" rounded-2xl min-h-[800px] slider_image_1 lg:text-left text-center">
-              <div className=" text-white w-[80%] py-[20%] px-[5%]">
-                <h1 className="text-3xl md:text-5xl lg:text-5xl animate__animated animate__bounce">
+            <div className=" rounded-2xl min-h-[800px] slider_image_1  text-center">
+              <div className=" text-white  py-[20%] px-[5%] text-center flex flex-col justify-center items-center">
+                <h1 className="text-3xl md:text-5xl lg:text-5xl  text-center">
                   Your Private Island Getaway
                 </h1>
-                <p className="lg:w-[60%] text-lg mt-3 mb-4">
+                <p className="lg:w-[60%] text-lg mt-3 mb-4 text-center">
                   Experience ultimate relaxation and seclusion as you unwind in
                   luxurious villas with breathtaking ocean views. Enjoy
                   personalized service, gourmet dining, and a range of
@@ -67,11 +67,11 @@ const Home = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className=" rounded-2xl min-h-[800px] slider_image2">
-              <div className=" text-white w-[80%] py-[20%] px-[5%]">
-                <h1 className="text-3xl md:text-5xl lg:text-5xl">
+              <div className=" text-white flex flex-col justify-center items-center py-[20%] px-[5%]">
+                <h1 className="text-3xl md:text-5xl lg:text-5xl text-center">
                   Escape to Paradise: Discover Our Exquisite Resort Experience
                 </h1>
-                <p className="lg:w-[60%] text-lg mt-3 mb-4">
+                <p className="lg:w-[60%] text-lg mt-3 mb-4 text-center">
                   Immerse yourself in the ultimate getaway experience at
                   Paradise Resort, where every moment is designed to captivate
                   your senses and rejuvenate your spirit. Nestled amidst the
@@ -84,11 +84,11 @@ const Home = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className=" rounded-2xl min-h-[800px] slider_image_3">
-              <div className=" text-white w-[80%] py-[20%] px-[5%]">
-                <h1 className="text-3xl md:text-5xl lg:text-5xl">
+              <div className=" text-white flex flex-col justify-center items-center py-[20%] px-[5%]">
+                <h1 className="text-3xl md:text-5xl lg:text-5xl text-center">
                   Ascend to Luxury: Discover Our Exquisite Penthouse Collection
                 </h1>
-                <p className="lg:w-[60%] text-lg mt-3 mb-4">
+                <p className="lg:w-[60%] text-lg mt-3 mb-4 text-center">
                   Welcome to unparalleled luxury living at our exquisite
                   penthouse. Perched high above the city skyline, this
                   magnificent residence offers an unparalleled blend of
