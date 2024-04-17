@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { object } from "prop-types";
 import Footer from "./Footer";
 import { saveProperty } from "../../../SaveToLocalStorage/SaveToLocalStorage";
+import { Helmet } from "react-helmet";
 
 const DetailsPage = () => {
   const [estates, setEstate] = useState([]);
@@ -28,6 +29,8 @@ const DetailsPage = () => {
     image,
   } = singleState;
   const { facilities } = singleState;
+  const [pageTitle, setPageTitle] = useState("");
+  
   // console.log(facilities);
   const handleBuyProperty = (propertyName) => {
     saveProperty(propertyName);
@@ -35,6 +38,11 @@ const DetailsPage = () => {
   };
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`${estate_title} | HomeHeaven`} </title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Navbar></Navbar>
       <div className="w-[90%] mx-auto  flex flex-col  lg:gap-12 gap-5">
         <div className="w-full lg:h-[550px]  py-7 bg-white rounded-2xl">
