@@ -8,12 +8,12 @@ import "../Home/linearBackground.css";
 
 import Footer from "../Shared/Navbar/Footer";
 import { MdEmail } from "react-icons/md";
-import { FaLock } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaLock } from "react-icons/fa6";
 
 const SignIn = () => {
   const { logIn } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
   const handleSignIn = (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -37,6 +37,11 @@ const SignIn = () => {
         toast.error(formattedErrorCode);
       });
   };
+
+  const handleShowPassword = () => {
+    setShow(!show);
+    console.log(show);
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -51,38 +56,47 @@ const SignIn = () => {
             Welcome Back!
           </h1>
           <form className="card-body" onSubmit={handleSignIn}>
-          <div className="form-control relative">
-          <MdEmail className="w-5 h-5 absolute  top-[9px]" />
-          <label className="label">
-            <span className="label-text text-base font-bold ml-5">
-              Email
-            </span>
-          </label>
+            <div className="form-control relative">
+              <MdEmail className="w-5 h-5 absolute  top-[9px]" />
+              <label className="label">
+                <span className="label-text text-base font-bold ml-5">
+                  Email
+                </span>
+              </label>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="email"
-            className="input input-bordered"
-            required
-          />
-        </div>
-        <div className="form-control relative">
-          <FaLock className="w-5 h-5 absolute  top-2 " />
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control relative">
+              <FaLock className="w-5 h-5 absolute  top-2 " />
 
-          <label className="label ml-5">
-            <span className="label-text text-base font-bold">Password</span>
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            className="input input-bordered"
-            required
-          />
-        </div>
+              <label className="label ml-5">
+                <span className="label-text text-base font-bold">Password</span>
+              </label>
+              <input
+                type={show ? "text" : "password"}
+                name="password"
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+              <span onClick={handleShowPassword}>
+                {show ? (
+                  <FaEyeSlash className="absolute right-[17px] w-6 h-6 top-[52px]" />
+                ) : (
+                  <FaEye className="absolute right-[17px] w-6 h-6 top-[52px]" />
+                )}
+              </span>
+            </div>
             <div className="form-control mt-3">
-              <button className="btn bg-blue-500 outline-none border-none text-white">Login</button>
+              <button className="btn bg-blue-500 outline-none border-none text-white">
+                Login
+              </button>
             </div>
 
             <p className="mt-7 text-center">

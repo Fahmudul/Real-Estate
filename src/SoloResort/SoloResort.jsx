@@ -1,8 +1,12 @@
-import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import 'animate.css';
 import { Link } from "react-router-dom";
-import { FaLocationDot } from "react-icons/fa6";
 const SoloResort = ({ estates }) => {
   // console.log(soloInfo)
+  useEffect(() => {
+    AOS.init({ duration: 400 });
+  }, []);
   const {
     estate_title,
     segment_name,
@@ -10,12 +14,18 @@ const SoloResort = ({ estates }) => {
     price,
     status,
     area,
-
     image,
     id,
   } = estates;
   return (
-    <div className="p-3 shadow-xl border-[1px]  rounded-xl no-underline text-black">
+    <div
+      className="p-3 shadow-xl border-[1px]  rounded-xl no-underline text-black"
+      data-aos="zoom-in-up"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <div className="">
         <div className="p-3  rounded-xl  min-h-[450px]">
           <img

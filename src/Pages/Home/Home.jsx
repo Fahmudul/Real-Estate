@@ -18,6 +18,7 @@ import { SiDiscord } from "react-icons/si";
 import PropTypes from "prop-types";
 import Footer from "../Shared/Navbar/Footer";
 import "./linearBackground.css";
+import 'animate.css';
 
 // import img_1 from "../../assets/slider 1.png";
 const Home = () => {
@@ -50,7 +51,7 @@ const Home = () => {
           <SwiperSlide>
             <div className=" rounded-2xl min-h-[800px] slider_image_1 lg:text-left text-center">
               <div className=" text-white w-[80%] py-[20%] px-[5%]">
-                <h1 className="text-3xl md:text-5xl lg:text-5xl">
+                <h1 className="text-3xl md:text-5xl lg:text-5xl animate__animated animate__bounce">
                   Your Private Island Getaway
                 </h1>
                 <p className="lg:w-[60%] text-lg mt-3 mb-4">

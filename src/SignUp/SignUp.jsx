@@ -8,13 +8,14 @@ import { Helmet } from "react-helmet";
 import Footer from "../Pages/Shared/Navbar/Footer";
 import toast from "react-hot-toast";
 import "../Pages/Home/linearBackground.css";
-import { FaLock, FaUser } from "react-icons/fa";
+import { FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdInsertPhoto, MdEmail } from "react-icons/md";
 
 const SignUp = () => {
   const { signUp, GoogleSignIn, GitHubSignIn, setUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
 
   const [photoUrl, setPhotoUrl] = useState("");
   // const navigate = useNavigate();
@@ -80,8 +81,10 @@ const SignUp = () => {
       });
   };
 
-  // GitHubSignIn();
-
+  const handleShowPassword = () => {
+    setShow(!show);
+    console.log(show);
+  };
   return (
     <div>
       <Navbar photoUrl={photoUrl}></Navbar>
@@ -150,12 +153,19 @@ const SignUp = () => {
                 <span className="label-text text-base font-bold">Password</span>
               </label>
               <input
-                type="password"
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <span onClick={handleShowPassword}>
+                {show ? (
+                  <FaEyeSlash className="absolute right-[17px] w-6 h-6 top-[52px]" />
+                ) : (
+                  <FaEye className="absolute right-[17px] w-6 h-6 top-[52px]" />
+                )}
+              </span>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-blue-500 border-none text-white">
